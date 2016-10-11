@@ -22,5 +22,7 @@ for item in nodes:
     # print node
     file.write(node.get('name', [""])[0] + "\r\n")
     file.write(node.get('src', [""])[0] + "\r\n")
+    file.write(node.get('magnet', [""])[0] + "\r\n")
+    file.write(node.get('thunder', [""])[0] + "\r\n")
     file.write(node.get('size', [""])[0] + "\r\n")
     file.write(node.get('updateTime', [""])[0] + "\r\n====================================\n")
