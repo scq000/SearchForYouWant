@@ -20,3 +20,9 @@ keyword为你想要搜索的资源关键字,如果你想多关键字输入，可
 python search.py 'keyword1 keyword2 ...
 ```
 这种方式
+
+#Pyrailgun 版使用
+基于pyrailgun库开发，所以需要
+```
+sudo pip install pyrailgun
+```
