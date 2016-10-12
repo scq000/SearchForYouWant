@@ -1,0 +1,73 @@
+{
+    "action": "main",
+    "name": "http://www.zhizhu88.com/",
+    "subaction": [
+        {
+            "action": "fetcher",
+            "url": "http://www.zhizhu88.com/so/%E6%9F%AF%E5%8D%97-first-asc-1",
+            "subaction": [
+                {
+                    "action": "parser",
+                    "subaction": [
+                        {
+                            "action": "shell",
+                            "subaction": [
+                                {
+                                    "action": "parser",
+                                    "setField": "name",
+                                    "rule": ".result a",
+                                    "strip": "true"
+                                },
+                                {
+                                    "attr": "href",
+                                    "action": "parser",
+                                    "setField": "src",
+                                    "pos": 0,
+                                    "rule": ".result a",
+                                    "strip": "true",
+                                    "subaction": [
+                                        {
+                                            "action": "fetcher",
+                                            "url": "http://www.zhizhu88.com${#src}",
+                                            "subaction": [
+                                                {
+                                                    "action": "parser",
+                                                    "attr": "href",
+                                                    "setField": "magnet",
+                                                    "rule": "a.loda-btn"
+                                                },
+                                                {
+                                                    "action": "parser",
+                                                    "attr": "href",
+                                                    "setField": "thunder",
+                                                    "rule": ".info .col-md-12 > a",
+                                                    "pos": 1
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "action": "parser",
+                                    "setField": "updateTime",
+                                    "rule": ".item-bar td",
+                                    "pos": 0,
+                                    "strip": "true"
+                                },
+                                {
+                                    "action": "parser",
+                                    "setField": "size",
+                                    "rule": ".item-bar td",
+                                    "pos": 2,
+                                    "strip": "true"
+                                }
+                            ],
+                            "group": "default"
+                        }
+                    ],
+                    "rule": ".col-md-8 .panel-body"
+                }
+            ]
+        }
+    ]
+}
