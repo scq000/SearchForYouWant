@@ -1,5 +1,5 @@
 #Description
-A search tools for downloading based in BT or [BaiduPan](https://pan.baidu.com).
+A search tools for downloading based in BT.
 
 #Get Start 使用方法
 1. 安装python和pip以及依赖的工具库
@@ -26,3 +26,5 @@ python search.py 'keyword1 keyword2 ...
 ```
 sudo pip install pyrailgun
 ```
+由于pyrailgun对于gzip压缩的网页支持不足，所以我更改了其源码，可以在[https://gist.github.com/scq000/d677f0204fc01578df1340a91be1bce1](https://gist.github.com/scq000/d677f0204fc01578df1340a91be1bce1)中获取并替换后使用。
+
